@@ -130,6 +130,11 @@ export default function SettlementCalculator() {
                 </button>
             </div>
 
+            <div className="flex gap-4">
+                <p className='px-4 py-2'>Eingezahltes Geld: {players.reduce((sum, player) => sum + player.deposited, 0)} €</p>
+                <p className='px-4 py-2'>Saldo: {players.reduce((sum, p) => sum + (p.current - p.deposited), 0)} €</p>
+            </div>
+
             {transactions.length > 0 && (
                 <div className="mt-6">
                     <h2 className="text-xl font-semibold mb-2">🔁 Überweisungen:</h2>
